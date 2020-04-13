@@ -1,0 +1,43 @@
+.AnchorPane{
+-fx-background-image: url("icons/regBackground.jpg");
+
+
+}
+
+
+.tab-pane *.tab-header-area *.tab-header-background {
+  -fx-background-color:transparent;
+ 
+  
+   
+}
+
+.tab
+{
+	
+	-fx-padding: 5px;
+    -fx-border-insets: 5px;
+	-fx-background-color:transparent;
+	 -fx-border-color: gray;
+	  
+	  -fx-border-radius:30;
+	  -fx-border-width:3;
+	 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.tab .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected {
+    -fx-background-color:gray ;
+    -fx-background-radius:30;
+     -fx-border-color: gray;
+
+	  -fx-border-radius:30;
+    
+    
+}
+

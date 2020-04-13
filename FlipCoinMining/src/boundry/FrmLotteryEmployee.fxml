@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmLotteryEmployee">
+   <children>
+      <TextField fx:id="lotteryMaxMiner" layoutX="58.0" layoutY="80.0" prefHeight="26.0" prefWidth="238.0" promptText="Maximum Miner Participants" />
+      <TextField fx:id="LotteryNumOfWinners" layoutX="58.0" layoutY="116.0" prefHeight="26.0" prefWidth="238.0" promptText="Number of Winners" />
+      <TextField fx:id="lotteryBenefits" layoutX="58.0" layoutY="151.0" prefHeight="26.0" prefWidth="238.0" promptText="Number of Benefits" />
+      <Button layoutX="101.0" layoutY="273.0" mnemonicParsing="false" onAction="#createLottery" text="Create Lottery" />
+      <ComboBox fx:id="lotteries" layoutX="58.0" layoutY="356.0" prefHeight="26.0" prefWidth="195.0" promptText="Choose Lottery" />
+      <Button layoutX="80.0" layoutY="419.0" mnemonicParsing="false" onAction="#ExcecuteLottery" text="Excecute Lottery" />
+      <TextArea fx:id="lotteryWinners" editable="false" layoutX="296.0" layoutY="356.0" prefHeight="200.0" prefWidth="348.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextArea>
+      <TextField fx:id="lotteryBenefitDiscription" layoutX="367.0" layoutY="80.0" prefHeight="26.0" prefWidth="238.0" promptText="Benefit Discription" />
+      <Button fx:id="newBenefit" layoutX="387.0" layoutY="138.0" mnemonicParsing="false" onAction="#addBenefit" text="Add Benefit to System" />
+      <Label layoutX="445.0" layoutY="315.0" prefHeight="18.0" prefWidth="151.0" text="Winners:" textFill="#fffcfc">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateOfLottery" layoutX="59.0" layoutY="187.0" />
+      <Label layoutX="253.0" layoutY="188.0" prefHeight="12.0" prefWidth="58.0" text="Date" textFill="#fffcfc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hourOfLottery" layoutX="59.0" layoutY="227.0" prefHeight="25.0" prefWidth="174.0" promptText="HH:MM" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version= "1.0"?>
+
+<solutions>
+	<solution id="11">
+		<riddleId>17</riddleId>
+		<sol>2</sol>
+	</solution>
+	<solution id="12">
+		<riddleId>17</riddleId>
+		<sol>-2</sol>
+	</solution>
+	<solution id="13">
+		<riddleId>18</riddleId>
+		<sol>30</sol>
+	</solution>
+	<solution id="14">
+		<riddleId>19</riddleId>
+		<sol>5</sol>
+	</solution>
+	<solution id="15">
+		<riddleId>20</riddleId>
+		<sol>15</sol>
+	</solution>
+		<solution id="16">
+		<riddleId>21</riddleId>
+		<sol>1</sol>
+	</solution>
+</solutions>

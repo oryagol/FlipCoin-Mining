@@ -1,0 +1,19 @@
+<?xml version= "1.0"?>
+
+<riddles>
+	<riddle id="17">
+		<discription>square root 4</discription>
+</riddle>
+<riddle id="18">
+		<discription>5*6</discription>
+</riddle>
+<riddle id="19">
+		<discription>3x=15</discription>
+</riddle>
+<riddle id="20">
+		<discription>x-3=12</discription>
+</riddle>
+<riddle id="21">
+		<discription>6-5</discription>
+</riddle>
+</riddles>

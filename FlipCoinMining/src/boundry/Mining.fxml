@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmMining">
+  <tabs>
+    <Tab text="Riddles">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="riddleDiff" layoutX="355.0" layoutY="18.0" prefWidth="150.0" promptText="Difficulty Level" />
+                  <ComboBox fx:id="riddlesRiddle" layoutX="62.0" layoutY="18.0" prefWidth="150.0" promptText="Riddle" />
+                  <Label layoutX="210.0" layoutY="371.0" prefHeight="26.0" prefWidth="152.0" text="Time Left To Solve" textFill="#ffffff">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="riddleStart" layoutX="71.0" layoutY="52.0" mnemonicParsing="false" onAction="#displayRiddle" prefHeight="26.0" prefWidth="132.0" text="Display Riddle" />
+                  <Button fx:id="riddleSend" layoutX="363.0" layoutY="361.0" mnemonicParsing="false" onAction="#sendSolution" text="Send Solution" />
+                  <TextArea fx:id="riddleSol" layoutX="322.0" layoutY="143.0" prefHeight="202.0" prefWidth="201.0" />
+                  <Label layoutX="74.0" layoutY="102.0" prefHeight="26.0" prefWidth="152.0" text="Riddle:" textFill="#ffffff">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="riddleRiddle" editable="false" layoutX="49.0" layoutY="143.0" prefHeight="202.0" prefWidth="201.0" />
+                  <Button fx:id="riddleRegister" layoutX="107.0" layoutY="361.0" mnemonicParsing="false" onAction="#registerToRiddle" text="Register" />
+                  <Button fx:id="chooseLevel" layoutX="359.0" layoutY="52.0" mnemonicParsing="false" onAction="#chooseLevel" prefHeight="26.0" prefWidth="139.0" text="Choose Difficulty Level" />
+                  <Label layoutX="340.0" layoutY="102.0" prefHeight="26.0" prefWidth="152.0" text="Solution:" textFill="#ffffff">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="timeLeft" editable="false" layoutX="203.0" layoutY="407.0" />
+                  <Label layoutX="371.0" layoutY="404.0" prefHeight="26.0" prefWidth="50.0" text="Hours" textFill="#ffffff">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Manage Blocks">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="blocksMyBlocks" layoutX="56.0" layoutY="66.0" prefHeight="26.0" prefWidth="198.0" promptText="My Blocks" />
+                  <ComboBox fx:id="blocksTrans" layoutX="56.0" layoutY="130.0" onAction="#updateFeeSum" prefHeight="26.0" prefWidth="198.0" promptText="Transactions" />
+                  <Button fx:id="blocksAddTransButton" layoutX="299.0" layoutY="183.0" mnemonicParsing="false" onAction="#insertBlock" text="Add Transaction To Block" />
+                  <TextField fx:id="blocksSum" editable="false" layoutX="278.0" layoutY="130.0" prefHeight="26.0" prefWidth="221.0" promptText="Fee Sum" />
+                  <ComboBox fx:id="blocksAddTrans" layoutX="56.0" layoutY="183.0" prefHeight="26.0" prefWidth="198.0" promptText="Transaction To Add" />
+                  <Button fx:id="blocksAddTrans2" layoutX="300.0" layoutY="66.0" mnemonicParsing="false" onAction="#chooseBlock" text="Choose Block" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Data Handler">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="blocksAddTrans1" layoutX="14.0" layoutY="120.0" mnemonicParsing="false" onAction="#btnExport" prefHeight="126.0" prefWidth="199.0" text="     Export To &#10;FlipCoin Transfer">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="blocksAddTrans11" layoutX="242.0" layoutY="120.0" mnemonicParsing="false" onAction="#btnImport" prefHeight="126.0" prefWidth="199.0" text="     Import From&#10;FlipCoin Transfer">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="blocksAddTrans12" layoutX="468.0" layoutY="120.0" mnemonicParsing="false" onAction="#importRiddles" prefHeight="126.0" prefWidth="199.0" text="  Import Riddles ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Manage Levels">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="riddlesUnassigned" layoutX="190.0" layoutY="66.0" prefHeight="26.0" prefWidth="207.0" promptText="Unassigned Riddles" />
+                  <ComboBox fx:id="unassignedDifficulty" layoutX="190.0" layoutY="113.0" prefHeight="26.0" prefWidth="207.0" promptText="Diffuculty Level" />
+                  <Button layoutX="226.0" layoutY="173.0" mnemonicParsing="false" onAction="#assignDifficulty" prefHeight="32.0" prefWidth="106.0" text="Assign" />
+                  <TextField fx:id="addDifficulty" layoutX="54.0" layoutY="289.0" prefHeight="26.0" prefWidth="166.0" promptText="Difficulty" />
+                  <TextField fx:id="addLevel" layoutX="54.0" layoutY="328.0" prefHeight="26.0" prefWidth="166.0" promptText="Level" />
+                  <TextField fx:id="addBlockSize" layoutX="54.0" layoutY="368.0" prefHeight="26.0" prefWidth="166.0" promptText="Block Size" />
+                  <Button layoutX="84.0" layoutY="411.0" mnemonicParsing="false" onAction="#addDifficultyLevel" prefHeight="32.0" prefWidth="106.0" text="Add " />
+                  <ComboBox fx:id="updateDifficulty" layoutX="335.0" layoutY="294.0" prefHeight="26.0" prefWidth="207.0" promptText="Difficulty Level" />
+                  <TextField fx:id="updateBlockSize" layoutX="358.0" layoutY="340.0" prefHeight="26.0" prefWidth="166.0" promptText="Block Size" />
+                  <Button layoutX="378.0" layoutY="381.0" mnemonicParsing="false" onAction="#updateDifficulty" prefHeight="32.0" prefWidth="106.0" text="Update" />
+                  <Label layoutX="77.0" layoutY="242.0" prefHeight="32.0" prefWidth="144.0" text="New Difficulty Level" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="363.0" layoutY="242.0" prefHeight="32.0" prefWidth="144.0" text="Update Level" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="222.0" layoutY="14.0" prefHeight="32.0" prefWidth="156.0" text="Assign level to Riddle" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Manage System">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="deleteBenefit" layoutX="350.0" layoutY="95.0" mnemonicParsing="false" onAction="#deleteBenefit" prefHeight="33.0" prefWidth="66.0" text="Delete" />
+                  <Button fx:id="addBenefit" layoutX="350.0" layoutY="50.0" mnemonicParsing="false" onAction="#addBenefit" prefHeight="33.0" prefWidth="66.0" text="Add" />
+                  <ComboBox fx:id="BenefitToDelete" layoutX="161.0" layoutY="98.0" prefHeight="28.0" prefWidth="152.0" promptText="Benefits" />
+                  <TextField fx:id="benefitToAdd" layoutX="163.0" layoutY="54.0" prefHeight="26.0" prefWidth="151.0" promptText="Benefit " />
+                  <Button fx:id="deleteLevel" layoutX="350.0" layoutY="142.0" mnemonicParsing="false" onAction="#deleteDifficultyLevel" prefHeight="33.0" prefWidth="66.0" text="Delete" />
+                  <ComboBox fx:id="levelToDelete" layoutX="161.0" layoutY="145.0" prefHeight="28.0" prefWidth="152.0" promptText="Difficulty Level" />
+                  <Button fx:id="deleteLottery" layoutX="350.0" layoutY="195.0" mnemonicParsing="false" onAction="#deleteLottery" prefHeight="33.0" prefWidth="66.0" text="Delete" />
+                  <ComboBox fx:id="loteryToDelete" layoutX="161.0" layoutY="198.0" prefHeight="28.0" prefWidth="152.0" promptText="Lottery" />
+                  <Button fx:id="deleteRiddle" layoutX="352.0" layoutY="248.0" mnemonicParsing="false" onAction="#deleteRiddle" prefHeight="33.0" prefWidth="66.0" text="Delete" />
+                  <ComboBox fx:id="riddleToDelete" layoutX="163.0" layoutY="251.0" prefHeight="28.0" prefWidth="152.0" promptText="Riddles" />
+                  <Button fx:id="updStat" layoutX="191.0" layoutY="300.0" mnemonicParsing="false" onAction="#updStatus" prefHeight="43.0" prefWidth="202.0" text="Update Irrelevent Riddle Status" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

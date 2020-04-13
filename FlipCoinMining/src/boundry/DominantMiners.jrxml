@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DominantMiners" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e82121e-fed5-433d-88b2-77818b128e70">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UCA3"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="StartDate" class="java.sql.Date"/>
+	<parameter name="EndDATE" class="java.sql.Date"/>
+	<queryString>
+		<![CDATA[SELECT subQuery_DominantMiner1.FirstName, subQuery_DominantMiner1.LastName, subQuery_DominantMiner1.Count_Of_Blocks, subQuery_DominantMiner1.Total_Block_Size, subQuery_DominantMiner2.Num_Of_Solved_Riddles_Not_First
+FROM subQuery_DominantMiner1, subQuery_DominantMiner2
+GROUP BY subQuery_DominantMiner1.FirstName, subQuery_DominantMiner1.LastName, subQuery_DominantMiner1.Count_Of_Blocks, subQuery_DominantMiner1.Total_Block_Size, subQuery_DominantMiner2.Num_Of_Solved_Riddles_Not_First, [Count_Of_Blocks]/[Total_Block_Size]
+ORDER BY [Count_Of_Blocks]/[Total_Block_Size] DESC;]]>
+	</queryString>
+	<field name="FirstName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FirstName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="subQuery_DominantMiner1"/>
+	</field>
+	<field name="LastName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="LastName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="subQuery_DominantMiner1"/>
+	</field>
+	<field name="Count_Of_Blocks" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Count_Of_Blocks"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="subQuery_DominantMiner1"/>
+	</field>
+	<field name="Total_Block_Size" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="Total_Block_Size"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="subQuery_DominantMiner1"/>
+	</field>
+	<field name="Num_Of_Solved_Riddles_Not_First" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Num_Of_Solved_Riddles_Not_First"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="subQuery_DominantMiner2"/>
+	</field>
+	<group name="Group1">
+		<groupHeader>
+			<band height="78">
+				<staticText>
+					<reportElement x="22" y="-1" width="100" height="30" uuid="3cec29ac-4cd7-4545-ab38-1f9f5593db3c"/>
+					<text><![CDATA[First Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="140" y="-1" width="100" height="30" uuid="153d3b81-d204-4a1b-b53e-527ca493fb9c"/>
+					<text><![CDATA[Last Name]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="20" y="40" width="100" height="30" uuid="35681236-3fd2-4756-83b9-7cd4bf5f51db"/>
+					<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="140" y="40" width="100" height="30" uuid="17f0c87a-3c26-4506-97d6-f281e0f2a60f"/>
+					<textFieldExpression><![CDATA[$F{LastName}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="18" width="320" height="42" uuid="7f3ff011-9f87-4486-adf3-b9aef557b918"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Dominant Miner Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="19" width="100" height="30" uuid="171d45b9-9782-4b1f-acd7-fcbf08856dc1"/>
+				<text><![CDATA[Num of blocks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="20" width="100" height="30" uuid="ce3be280-b5c6-472b-81ce-4a628a534ba8"/>
+				<text><![CDATA[Total block size]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="19" width="100" height="30" uuid="78bbe429-61a1-4453-b904-2062c349523c"/>
+				<text><![CDATA[Number of riddles first solved]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="10" y="62" width="100" height="30" uuid="2b56874f-a922-42ad-8ca3-2984c641b5ce"/>
+				<textFieldExpression><![CDATA[$F{Count_Of_Blocks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="60" width="100" height="30" uuid="0b8f721c-c0ba-4532-94ef-ca000a4bcda5"/>
+				<textFieldExpression><![CDATA[$F{Total_Block_Size}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="62" width="100" height="30" uuid="e1426002-4454-478e-ae30-72376827979a"/>
+				<textFieldExpression><![CDATA[$F{Num_Of_Solved_Riddles_Not_First}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

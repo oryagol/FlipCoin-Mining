@@ -1,0 +1,29 @@
+<?xml version= "1.0"?>
+
+<transactions>
+	<transaction id="A2B4">
+		<type>confirm</type>
+		<size>6</size>
+		<fee>0.1</fee>
+	</transaction>
+	<transaction id="C8G2">
+		<type>pay</type>
+		<size>4</size>
+		<fee>0.05</fee>
+	</transaction>
+	<transaction id="K8G9">
+		<type>pay</type>
+		<size>8</size>
+		<fee>0.2</fee>
+	</transaction>
+	<transaction id="P0P2">
+		<type>pay</type>
+		<size>16</size>
+		<fee>0.5</fee>
+	</transaction>
+	<transaction id="E6D1">
+		<type>confirm</type>
+		<size>12</size>
+		<fee>0.8</fee>
+	</transaction>
+</transactions>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<BorderPane fx:id="borderMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.MenuForUser">
+   <right>
+      <VBox alignment="CENTER" prefHeight="516.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+         <children>
+            <Line endX="99.75747680664062" endY="1.3857975006103516" startX="100.00006103515625" startY="-24.399978637695312" stroke="#fffdfd" strokeWidth="2.0" />
+            <ToggleButton fx:id="menuReport" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnCreateReport" prefHeight="20.0" prefWidth="120.0" text="Reports">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/report.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <Line endX="100.0" startX="100.00006103515625" startY="-24.399978637695312" stroke="#fffdfd" strokeWidth="2.0" />
+            <ToggleButton fx:id="menuMining" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnMining" prefHeight="20.0" prefWidth="120.0" text="Mining">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/mining.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <Line endX="100.0" startX="100.00006103515625" startY="-24.399978637695312" stroke="#fffdfd" strokeWidth="2.0" />
+            <ToggleButton fx:id="menuLottery" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLottery" prefHeight="20.0" prefWidth="120.0" text="Lottery">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/wheel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ToggleButton>
+            <Line endX="100.0" startX="100.00006103515625" startY="-24.399978637695312" stroke="#fffdfd" strokeWidth="2.0" />
+            <ToggleButton fx:id="menuLogOff" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLogOff" prefHeight="20.0" prefWidth="120.0" text="Log Off">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/iconfinder_Exit_export_out_send_sending_archive_outside_1886941%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <Line endX="100.0" startX="100.00006103515625" startY="-24.399978637695312" stroke="#fffdfd" strokeWidth="2.0" />
+            <ToggleButton fx:id="menuExit" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnExit" prefHeight="20.0" prefWidth="120.0" text="Exit">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/iconfinder_error_1646012.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <Line endX="100.0" startX="100.00006103515625" startY="-24.399978637695312" stroke="#fffdfd" strokeWidth="2.0" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <AnchorPane fx:id="menuScreen" prefHeight="480.0" prefWidth="498.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundry.FrmMinerLottery">
+   <children>
+      <ComboBox fx:id="lotteries" layoutX="196.0" layoutY="58.0" prefHeight="26.0" prefWidth="206.0" promptText="Choose Lottery" />
+      <Button layoutX="252.0" layoutY="162.0" mnemonicParsing="false" onAction="#registerLottery" text="Register" />
+   </children>
+</AnchorPane>

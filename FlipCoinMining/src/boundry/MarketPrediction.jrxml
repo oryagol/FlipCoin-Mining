@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MarketPrediction" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73081fb0-4dd4-4320-bcff-566a3139e71d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UCA3"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT subQuery_MarkertPredictionTime.Hour AS [hour], IIf(IsNull(T.transAmount),0,T.transAmount) AS transAmount, IIf(IsNull(B.blockAmount),0,B.blockAmount) AS blockAmount, IIf(IsNull(B.minerAmount),0,B.minerAmount) AS minerAmount
+FROM subQuery_MarketPredictionBlock AS B RIGHT JOIN (subQuery_MarkertPredictionTime LEFT JOIN subQuery_MarketPredictionTransaction AS T ON subQuery_MarkertPredictionTime.[hour] = T.hr) ON B.hr = subQuery_MarkertPredictionTime.[hour];]]>
+	</queryString>
+	<field name="hour" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="hour"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="SYSTEM_SUBQUERY"/>
+	</field>
+	<field name="transAmount" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="transAmount"/>
+	</field>
+	<field name="blockAmount" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="blockAmount"/>
+	</field>
+	<field name="minerAmount" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="minerAmount"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="20" width="287" height="30" uuid="2c19005d-ca80-48a7-8389-41941bad92bf"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Market Prediction Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="82" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="160" y="50" width="100" height="30" uuid="2e9e736c-fe31-47b7-b74d-263571f5315f"/>
+				<textFieldExpression><![CDATA[$F{transAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="50" width="100" height="30" uuid="18bd874f-9b8e-42a7-8cf6-1a5afd38f213"/>
+				<textFieldExpression><![CDATA[$F{blockAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="50" width="100" height="30" uuid="3e99a660-a519-4184-bd6a-2f626e733825"/>
+				<textFieldExpression><![CDATA[$F{minerAmount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="0" width="100" height="30" uuid="9a022a67-0f7d-4206-aab5-8968c7c1b770"/>
+				<text><![CDATA[Transaction Amount:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="30" uuid="2182d7d6-7948-4dff-adbd-ab9b26f5eeea"/>
+				<text><![CDATA[Block Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="7b33eaf0-11d5-410b-9172-35668c2c2b4a"/>
+				<text><![CDATA[Miner Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="0b7c4990-cebc-401b-9b9a-42c1b75fc9f8"/>
+				<text><![CDATA[Hour:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="47" width="100" height="30" uuid="6631e38c-4d60-4694-a96c-9a18b3726435"/>
+				<textFieldExpression><![CDATA[$F{hour}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
